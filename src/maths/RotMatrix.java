@@ -1,15 +1,48 @@
 package maths;
 
 public class RotMatrix {
-    public void rotateMatrixTransform(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4){
-        int rOffset = 45;
+    class RotationMatrix{
+        public double matrix4[];
+        /*
+            double matrix4[] = {
+            a, e, i, 0,
+            b, f, j, 0,
+            c, g, k, 0,
+            d, h, l, 1
+            };
+         */
+        int a, b, c, d, e, f, g, h, i, j, k, l;
+        public RotationMatrix(int aa,int bb,int cc,int dd,int ee,int ff,int gg,int hh, int ii, int jj, int kk, int ll){
+            a = aa;
+            b = bb;
+            c = cc;
+            d = dd;
+            e = ee;
+            f = ff;
+            g = gg;
+            h = hh;
+            i = ii;
+            j = jj;
+            k = kk;
+            l = ll;
 
-        v1.x = Math.cos(v1.x) * (double)v1.x;
-        v2.x = Math.sin(v2.x) * (double)v2.x;
-        v3.x = Math.asin(v3.x) * (double)v3.x;
-        v4.x = Math.cos(v4.x) * (double)v4.x;
+            double matrix4[] = {
+                    a, e, i, 0,
+                    b, f, j, 0,
+                    c, g, k, 0,
+                    d, h, l, 1
+            };
+
+        }
     }
-    public void rotMatrix(){
+
+
+    public void rX(){
+    }
+    public void rY(){
+
+    }
+    public void rZ(){
 
     }
 }
