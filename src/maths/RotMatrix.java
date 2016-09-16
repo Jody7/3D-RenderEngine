@@ -47,6 +47,11 @@ public class RotMatrix {
         return new RotationMatrix(aa, bb, cc, dd, ee, ff, gg, hh, ii);
     }
 
+    public Vector3 rotationTransform(Vector3 v1, double x, double y, double z){
+                // multiplication order matters!
+        return rX(rY(rZ(v1, z), y),x);
+    }
+
     public Vector3 rX(Vector3 v1, double theta){
         //double theta = Math.toRadians(45);
         double x,y,z;
@@ -106,7 +111,33 @@ public class RotMatrix {
         return v2;
     }
 
-    public void rZ(){
+    public Vector3 rZ(Vector3 v1, double theta){
+        //double theta = Math.toRadians(45);
+        double x,y,z;
+        double x2,y2,z2;
 
+        x = v1.x;
+        y = v1.y;
+        z = v1.z;
+
+
+        double j,k,l,m,n,o,p,q,r;
+        /*
+        j   k   l
+        m   n   o
+        p   q   r
+         */
+
+        j = Math.cos(theta); k = -Math.sin(theta); l = 0;
+        m = Math.sin(theta); n = Math.cos(theta); o = 0;
+        p = 0; q = 0 ; r = 1;
+
+        x2 = (x*j) + (y*k) + (z*l);
+        y2 = (x*m) + (y*n) + (z*o);
+        z2 = (x*p) + (y*q) + (z*r);
+
+        Vector3 v2 = new Vector3(x2, y2, z2);
+
+        return v2;
     }
 }
