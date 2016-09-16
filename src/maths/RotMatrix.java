@@ -140,4 +140,37 @@ public class RotMatrix {
 
         return v2;
     }
+
+    public Vector3 translate3d(Vector3 v1, double tx, double ty, double tz){
+        //double theta = Math.toRadians(45);
+        double x,y,z,w;
+        double x2,y2,z2;
+
+        w = 1;
+        x = v1.x;
+        y = v1.y;
+        z = v1.z;
+
+
+        double a,b,c,d,e,f,g,h,i,j,k,l;
+        /*
+        a b c d
+        e f g h
+        i j k l
+         */
+
+        a=1;b=0;c=0;d=tx;
+        e=0;f=1;g=0;h=ty;
+        i=0;j=0;k=1;l=tz;
+
+
+        x2 = (x*a) + (y*b) + (z*c)+ (w*d);
+        y2 = (x*e) + (y*f) + (z*g)+ (w*h);
+        z2 = (x*i) + (y*j) + (z*k)+ (w*l);
+
+        Vector3 v2 = new Vector3(x2, y2, z2);
+        v2.q = w;
+
+        return v2;
+    }
 }

@@ -5,7 +5,7 @@ public class Vector3 {
     public double x;
     public double y;
     public double z;
-
+    public double q; // hidden
     public int tX;
     public int tY;
     public int tZ;

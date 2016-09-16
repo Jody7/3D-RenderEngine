@@ -52,7 +52,7 @@ public class MainDraw extends JPanel{
             System.out.println(magnitude);
             i += 2;
             draw2d(g);
-            magnitude = 45 + (25 * Math.sin(Math.toRadians(i)));
+            //magnitude = 45 + (25 * Math.sin(Math.toRadians(i)));
             yTheta = Math.toRadians(i);
 
             //draw axis
@@ -60,9 +60,13 @@ public class MainDraw extends JPanel{
             g.drawLine(0,offsetY,1000,offsetY);
             g.drawLine(offsetX,0,offsetX,1000);
 
+            double funNum = (1.5 * Math.sin(Math.toRadians(i)));
+
+            System.out.println(funNum);
             for(int M=0; M<pointArray.length; M++) {
                 double rad = Math.toRadians(i);
-                vecArray[M] = rotM.rotationTransform(pointArray[M], rad, yTheta/2, yTheta/2);
+                Vector3 rotatedVec = rotM.rotationTransform(pointArray[M], rad, yTheta/2, yTheta/2); // rotate
+                vecArray[M] = rotM.translate3d(rotatedVec, funNum, funNum, 0); // bring to desired position
             }
 
             g.setColor(Color.red);
