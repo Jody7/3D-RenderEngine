@@ -19,8 +19,10 @@ public class Vector3 {
     public int getZ(){
         return (int) z;
     }
-
-    public Vector3(int x, int y, int z){
+    public void print(){
+        System.out.println("[" + " " + x + " " + y + " " + z + "]");
+    }
+    public Vector3(double x, double y, double z){
         this.x = x; this.y = y; this.z = z;
     }
 }
