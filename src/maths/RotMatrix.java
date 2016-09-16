@@ -47,8 +47,8 @@ public class RotMatrix {
         return new RotationMatrix(aa, bb, cc, dd, ee, ff, gg, hh, ii);
     }
 
-    public Vector3 rX(Vector3 v1){
-        double theta = Math.toRadians(45);
+    public Vector3 rX(Vector3 v1, double theta){
+        //double theta = Math.toRadians(45);
         double x,y,z;
         double x2,y2,z2;
 
