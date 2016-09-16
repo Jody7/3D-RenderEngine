@@ -76,9 +76,36 @@ public class RotMatrix {
 
         return v2;
     }
-    public void rY(){
+    public Vector3 rY(Vector3 v1, double theta){
+        //double theta = Math.toRadians(45);
+        double x,y,z;
+        double x2,y2,z2;
 
+        x = v1.x;
+        y = v1.y;
+        z = v1.z;
+
+
+        double j,k,l,m,n,o,p,q,r;
+        /*
+        j   k   l
+        m   n   o
+        p   q   r
+         */
+
+        j = Math.cos(theta); k = 0; l = Math.sin(theta);
+                   m = 0; n = 1; o = 0;
+        p = -Math.sin(theta); q = 0 ; r = Math.cos(theta);
+
+        x2 = (x*j) + (y*k) + (z*l);
+        y2 = (x*m) + (y*n) + (z*o);
+        z2 = (x*p) + (y*q) + (z*r);
+
+        Vector3 v2 = new Vector3(x2, y2, z2);
+
+        return v2;
     }
+
     public void rZ(){
 
     }
