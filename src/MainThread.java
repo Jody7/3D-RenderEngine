@@ -9,7 +9,7 @@ public class MainThread {
     public static JFrame CreateFrame(){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400,300);
+        frame.setSize(500,500);
         frame.setVisible(true);
         graphics = frame.getGraphics();
         return frame;
