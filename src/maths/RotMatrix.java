@@ -47,8 +47,9 @@ public class RotMatrix {
         return new RotationMatrix(aa, bb, cc, dd, ee, ff, gg, hh, ii);
     }
 
-    public Vector3 rotationTransform(Vector3 v1, double x, double y, double z){
+    public Vector3 rotationTransform(Vector3 v1, double x, double y, double z, double offsetX, double offsetY, double offsetZ){
                 // multiplication order matters!
+        v1 = new Vector3(v1.x+offsetX, v1.y+offsetY, v1.z+offsetZ);
         return rX(rY(rZ(v1, z), y),x);
     }
 

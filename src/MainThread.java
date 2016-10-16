@@ -8,10 +8,13 @@ public class MainThread {
     static Graphics graphics;
     public static JFrame CreateFrame(){
         JFrame frame = new JFrame();
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500,500);
         frame.setVisible(true);
+
         graphics = frame.getGraphics();
+
         return frame;
     }
 
@@ -21,7 +24,7 @@ public class MainThread {
         MainDraw main = new MainDraw();
         main.resetBG();
         frame.add(main);
-
+        frame.addKeyListener(main);
         main.mainTask(graphics);
     }
 }
